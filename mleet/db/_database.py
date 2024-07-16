@@ -10,6 +10,7 @@ class _Database:
     def __init__(self,
                  project_name: str,
                  metric_names: list[str]):
+        project_name = project_name.lower().replace(' ', '')
         if not path.exists('exps'):
             mkdir('exps')
         if not path.exists(f'exps/{project_name}'):
